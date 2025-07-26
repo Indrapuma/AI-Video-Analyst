@@ -15,4 +15,6 @@ uv/
 # Output files
 video_analysis.md
 
+ai_video_analyst.egg-info/
+
 # OS files
