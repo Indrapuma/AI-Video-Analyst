@@ -12,8 +12,8 @@ video_id = st.text_input("🔗 YouTube Video ID", placeholder="contoh: ccFbfwTWk
 if video_id:
     try:
         # srt_text = download_srt_from_youtube(video_id)
-        srt_text = "ccFbfwTWkMA.txt"  # Placeholder for testing
-        
+        with open("ccFbfwTWkMA.srt", "r", encoding="utf-8") as file:
+            srt_text = file.read()        
         with tempfile.NamedTemporaryFile(delete=False, suffix=".srt") as tmp:
             tmp.write(srt_text.encode("utf-8"))
             tmp_path = tmp.name
