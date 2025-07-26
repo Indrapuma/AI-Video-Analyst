@@ -1,0 +1,20 @@
+[project]
+name = "ai-video-analyst"
+version = "0.1.0"
+description = "Analisis video menggunakan OpenAI dan subtitle SRT."
+authors = [
+    { name = "Indra Putra Mahayuda", email = "indraa25.pmy@gmail.com" }
+]
+requires-python = ">=3.8"
+dependencies = [
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "srt>=3.0.0"
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["main"]
