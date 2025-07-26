@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: ai-video-analyst
+Version: 0.1.0
+Summary: Analisis video menggunakan OpenAI dan subtitle SRT.
+Author-email: Indra Putra Mahayuda <indraa25.pmy@gmail.com>
+Requires-Python: >=3.8
+Requires-Dist: openai>=1.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: srt>=3.0.0
