@@ -1,85 +1,73 @@
 # AI Video Analyst
 
-Project ini menganalisis subtitle video (format SRT) dan menghasilkan deskripsi visual serta tone/emosi tiap scene menggunakan Gemini AI.
+This project analyzes video subtitles (SRT format) and generates visual scene descriptions using AI.
 
-## Fitur
-- Membaca file subtitle `.srt`
-- Membagi subtitle menjadi scene berdasarkan jeda waktu
-- Menghasilkan deskripsi visual dan tone tiap scene dengan AI
-- Menyimpan hasil analisis ke file Markdown
+## Features
+- Automatically fetches YouTube subtitles by video ID
+- Reads `.srt` subtitle files
+- Splits subtitles into scenes based on time gaps
+- Generates AI-powered visual descriptions for each scene
+- Interactive results display using Streamlit
 
-## Cara Pakai
+## Usage
 
 1. **Install dependencies**  
-   ```
-   uv pip install -r requirements.txt
-   ```
-   atau jika pakai pyproject.toml:
    ```
    uv sync
    ```
 
-2. **Siapkan file `.env`**  
-   Tambahkan API key Gemini:
+2. **Prepare `.env` file**  
+   Add your AI API key if required:
    ```
    GOOGLE_API_KEY=your_api_key_here
    ```
 
-3. **Jalankan script**  
+3. **Run the Streamlit app**  
    ```
-   python main.py
+   streamlit run main.py
    ```
 
-4. **Hasil**  
-   File `video_analysis.md` akan berisi analisis scene dari subtitle.
+4. **Access the app**  
+   Enter a YouTube video ID, click the analyze button, and view the scene descriptions.
 
-## Contoh Input
+## Example Input
 
-File SRT (contoh):
+App input:
+- YouTube video ID: `ccFbfwTWkMA`
+
+Sample SRT file:
 ```
 1
 00:00:01,268 --> 00:00:03,729
-Turbin kincir angin sejauh mata memandang.
+Wind turbines as far as the eye can see.
 
 2
 00:00:03,917 --> 00:00:05,494
-Ada enam lagi yang masih dibuat.
+Six more are still being built.
 ```
 
-## Contoh Output
+## Example Output
 
-File Markdown (`video_analysis.md`):
-```
-## Scene 1
-⏱️ Waktu: 00:00:01,268 - 00:00:03,729
+Streamlit app display:
+- Scene 1 | ⏱ 00:00:01,268 - 00:00:03,729  
+  **🗣 Dialog:**  
+  Wind turbines as far as the eye can see.  
+  **🎥 Visual Description:**  
+  A wide field filled with slowly spinning wind turbines under a blue sky. The atmosphere is calm and hopeful, reflecting progress in green technology.
 
-🗣️ Dialog:
-Turbin kincir angin sejauh mata memandang.
+- Scene 2 | ⏱ 00:00:03,917 - 00:00:05,494  
+  **🗣 Dialog:**  
+  Six more are still being built.  
+  **🎥 Visual Description:**  
+  Workers are assembling new turbine parts in the field. The scene is busy and optimistic, showing ongoing development.
 
-🎬 Deskripsi Visual & Tone:
-Di layar tampak hamparan ladang luas dengan deretan turbin kincir angin yang berputar perlahan di bawah langit biru. Suasana terasa tenang dan penuh harapan, menggambarkan kemajuan teknologi ramah lingkungan.
+## Project Structure
 
----
+- `main.py` : Main Streamlit app
+- `srt_downloader.py` : YouTube subtitle downloader module
+- `video_analyzer.py` : Scene analysis and AI description module
+- `ccFbfwTWkMA.srt` : Example subtitle file
+- `pyproject.toml` : Project configuration & dependencies
 
-## Scene 2
-⏱️ Waktu: 00:00:03,917 - 00:00:05,494
-
-🗣️ Dialog:
-Ada enam lagi yang masih dibuat.
-
-🎬 Deskripsi Visual & Tone:
-Beberapa pekerja tampak sibuk merakit bagian-bagian turbin baru di tengah ladang. Suasana penuh aktivitas dan optimisme, menandakan proses pembangunan yang berkelanjutan.
-
----
-```
-
-## Struktur Project
-
-- `main.py` : Script utama analisis
-- `ccFbfwTWkMA.srt` : Contoh file subtitle
-- `pyproject.toml` : Konfigurasi project & dependencies
-
-## Kontribusi
-Pull request dan issue sangat diterima!
-
-##
+## Contributing
+Pull requests and issue sangat diterima!
