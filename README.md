@@ -33,6 +33,46 @@ Project ini menganalisis subtitle video (format SRT) dan menghasilkan deskripsi 
 4. **Hasil**  
    File `video_analysis.md` akan berisi analisis scene dari subtitle.
 
+## Contoh Input
+
+File SRT (contoh):
+```
+1
+00:00:01,268 --> 00:00:03,729
+Turbin kincir angin sejauh mata memandang.
+
+2
+00:00:03,917 --> 00:00:05,494
+Ada enam lagi yang masih dibuat.
+```
+
+## Contoh Output
+
+File Markdown (`video_analysis.md`):
+```
+## Scene 1
+⏱️ Waktu: 00:00:01,268 - 00:00:03,729
+
+🗣️ Dialog:
+Turbin kincir angin sejauh mata memandang.
+
+🎬 Deskripsi Visual & Tone:
+Di layar tampak hamparan ladang luas dengan deretan turbin kincir angin yang berputar perlahan di bawah langit biru. Suasana terasa tenang dan penuh harapan, menggambarkan kemajuan teknologi ramah lingkungan.
+
+---
+
+## Scene 2
+⏱️ Waktu: 00:00:03,917 - 00:00:05,494
+
+🗣️ Dialog:
+Ada enam lagi yang masih dibuat.
+
+🎬 Deskripsi Visual & Tone:
+Beberapa pekerja tampak sibuk merakit bagian-bagian turbin baru di tengah ladang. Suasana penuh aktivitas dan optimisme, menandakan proses pembangunan yang berkelanjutan.
+
+---
+```
+
 ## Struktur Project
 
 - `main.py` : Script utama analisis
