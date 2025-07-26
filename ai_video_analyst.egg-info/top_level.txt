@@ -1,3 +1,0 @@
-main
-srt_downloader
-video_analyzer
